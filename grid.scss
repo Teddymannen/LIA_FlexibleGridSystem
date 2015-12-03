@@ -64,7 +64,7 @@ $container: null;
 }
 // Sets the amount of columns and stretches them fully for a flexible and responsive view
 // Set the second value to a positive integer if you want to play around with more columns.
-@mixin col-xs($col-width, $col-max: 12) {
+@mixin col($col-width, $col-max: 12) {
     box-sizing: border-box;
     -ms-flex-preferred-size: calc-percent($col-width, $col-max);
     -webkit-flex-basis: calc-percent($col-width, $col-max);
@@ -75,13 +75,13 @@ $container: null;
 }
 // Axis Alignment
 // Uses the calc-percent function to calculate how much the column should be pushed to the right
-@mixin col-xs-offset($col-left, $col-max: 12) {
+@mixin col-offset($col-left, $col-max: 12) {
     margin-left: calc-percent($col-left, $col-max);
 }
 // Axis Alignment
 // - applies to: flex containers
 // flex-start | flex-end | center | space-between | space-around
-@mixin justify-content-xs($justify: flex-start) {
+@mixin justify-content($justify: flex-start) {
     -webkit-justify-content: $justify;
     -ms-flex-pack: $justify;
     -webkit-box-pack: $justify;
@@ -90,7 +90,7 @@ $container: null;
 // Cross-axis Alignment
 // - applies to: flex containers
 // flex-start | flex-end | center | baseline | stretch
-@mixin align-items-xs($items: stretch) {
+@mixin align-items($items: stretch) {
     -webkit-align-items: $items;
     -ms-flex-align-items: $items;
     -webkit-box-align-items: $items;
@@ -99,7 +99,7 @@ $container: null;
 // Axis Alignment
 // - applies to: flex items
 // Integers. Negative values allowed.
-@mixin order-xs($order: 1) {
+@mixin order($order: 1) {
     -webkit-order: $order;
     -ms-flex-order: $order;
     -webkit-box-order: $order;
@@ -108,123 +108,9 @@ $container: null;
 // Cross-axis Alignment
 // - applies to: flex items
 // auto | flex-start | flex-end | center | baseline | stretch
-@mixin align-self-xs($self: auto) {
+@mixin align-self($self: auto) {
     -webkit-align-self: $self;
     -ms-flex-align-self: $self;
     -webkit-box-align-self: $self;
     align-self: $self;
-}
-@media only screen and (min-width: $sm) {
-    @mixin col-sm($col-width, $col-max: 12) {
-        box-sizing: border-box;
-        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
-        -webkit-flex-basis: calc-percent($col-width, $col-max);
-        flex-basis: calc-percent($col-width, $col-max);
-        max-width: calc-percent($col-width, $col-max);
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    @mixin col-sm-offset($col-left, $col-max: 12) {
-        margin-left: calc-percent($col-left, $col-max);
-    }
-    @mixin justify-content-sm($justify: flex-start) {
-        -webkit-justify-content: $justify;
-        -ms-flex-pack: $justify;
-        -webkit-box-pack: $justify;
-        justify-content: $justify;
-    }
-    @mixin align-items-sm($items: stretch) {
-        -webkit-align-items: $items;
-        -ms-flex-align-items: $items;
-        -webkit-box-align-items: $items;
-        align-items: $items;
-    }
-    @mixin order-sm($order: 1) {
-        -webkit-order: $order;
-        -ms-flex-order: $order;
-        -webkit-box-order: $order;
-        order: $order;
-    }
-    @mixin align-self-sm($self: auto) {
-        -webkit-align-self: $self;
-        -ms-flex-align-self: $self;
-        -webkit-box-align-self: $self;
-        align-self: $self;
-    }
-}
-@media only screen and (min-width: $md) {
-    @mixin col-md($col-width, $col-max: 12) {
-        box-sizing: border-box;
-        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
-        -webkit-flex-basis: calc-percent($col-width, $col-max);
-        flex-basis: calc-percent($col-width, $col-max);
-        max-width: calc-percent($col-width, $col-max);
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    @mixin col-md-offset($col-left, $col-max: 12) {
-        margin-left: calc-percent($col-left, $col-max);
-    }
-    @mixin justify-content-md($justify: flex-start) {
-        -webkit-justify-content: $justify;
-        -ms-flex-pack: $justify;
-        -webkit-box-pack: $justify;
-        justify-content: $justify;
-    }
-    @mixin align-items-md($items: stretch) {
-        -webkit-align-items: $items;
-        -ms-flex-align-items: $items;
-        -webkit-box-align-items: $items;
-        align-items: $items;
-    }
-    @mixin order-md($order: 1) {
-        -webkit-order: $order;
-        -ms-flex-order: $order;
-        -webkit-box-order: $order;
-        order: $order;
-    }
-    @mixin align-self-md($self: auto) {
-        -webkit-align-self: $self;
-        -ms-flex-align-self: $self;
-        -webkit-box-align-self: $self;
-        align-self: $self;
-    }
-}
-@media only screen and (min-width: $lg) {
-    @mixin col-lg($col-width, $col-max: 12) {
-        box-sizing: border-box;
-        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
-        -webkit-flex-basis: calc-percent($col-width, $col-max);
-        flex-basis: calc-percent($col-width, $col-max);
-        max-width: calc-percent($col-width, $col-max);
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    @mixin col-lg-offset($col-left, $col-max: 12) {
-        margin-left: calc-percent($col-left, $col-max);
-    }
-    @mixin justify-content-lg($justify: flex-start) {
-        -webkit-justify-content: $justify;
-        -ms-flex-pack: $justify;
-        -webkit-box-pack: $justify;
-        justify-content: $justify;
-    }
-    @mixin align-items-lg($items: stretch) {
-        -webkit-align-items: $items;
-        -ms-flex-align-items: $items;
-        -webkit-box-align-items: $items;
-        align-items: $items;
-    }
-    @mixin order-lg($order: 1) {
-        -webkit-order: $order;
-        -ms-flex-order: $order;
-        -webkit-box-order: $order;
-        order: $order;
-    }
-    @mixin align-self-lg($self: auto) {
-        -webkit-align-self: $self;
-        -ms-flex-align-self: $self;
-        -webkit-box-align-self: $self;
-        align-self: $self;
-    }
 }

@@ -43,6 +43,15 @@ aside.firstAside {
   max-width: 50%;
   padding-right: 1rem;
   padding-left: 1rem; }
+  @media only screen and (min-width: 48em) {
+    aside.firstAside {
+      box-sizing: border-box;
+      -ms-flex-preferred-size: 100%;
+      -webkit-flex-basis: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem; } }
 
 aside.secondAside {
   box-sizing: border-box;
@@ -52,6 +61,15 @@ aside.secondAside {
   max-width: 50%;
   padding-right: 1rem;
   padding-left: 1rem; }
+  @media only screen and (min-width: 48em) {
+    aside.secondAside {
+      box-sizing: border-box;
+      -ms-flex-preferred-size: 100%;
+      -webkit-flex-basis: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem; } }
 
 section.main {
   box-sizing: border-box;

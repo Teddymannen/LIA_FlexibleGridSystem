@@ -4,19 +4,23 @@ div.wrap {
     @include flex-row;
 }
 header {
-    @include col-xs(12);
+    @include col(12);
 }
 aside.firstAside {
-    @include col-xs(6);
-    // @include col-md(12);     FUNKAR INTE
+    @include col(6);
+    @media only screen and (min-width: $sm) {
+        @include col(12);
+    }
 }
 aside.secondAside {
-    @include col-xs(6);
-    // @include col-md(12);     FUNKAR INTE
+    @include col(6);
+    @media only screen and (min-width: $sm) {
+        @include col(12);
+    }
 }
 section.main {
-    @include col-xs(12);
+    @include col(12);
 }
 footer {
-    @include col-xs(12);
+    @include col(12);
 }
