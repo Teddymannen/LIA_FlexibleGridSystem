@@ -7,13 +7,15 @@ header {
     @include col-xs(12);
 }
 aside.firstAside {
-    @include col-xs(12);
+    @include col-xs(6);
+    // @include col-md(12);     FUNKAR INTE
 }
 aside.secondAside {
     @include col-xs(6);
+    // @include col-md(12);     FUNKAR INTE
 }
 section.main {
-    @include col-xs(6);
+    @include col-xs(12);
 }
 footer {
     @include col-xs(12);
