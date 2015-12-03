@@ -1,0 +1,20 @@
+@import "grid.scss";
+
+div.wrap {
+    @include flex-row;
+}
+header {
+    @include col-xs(12);
+}
+aside.firstAside {
+    @include col-xs(12);
+}
+aside.secondAside {
+    @include col-xs(6);
+}
+section.main {
+    @include col-xs(6);
+}
+footer {
+    @include col-xs(12);
+}

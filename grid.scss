@@ -1,0 +1,230 @@
+
+
+//////////
+// GRID //
+//////////
+$sm: 48em;
+$md: 62em;
+$lg: 75em;
+@mixin flex-row {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    @media only screen and (min-width: $sm) {
+        width: 46rem;
+    }
+    @media only screen and (min-width: $md) {
+        width: 62rem;
+    }
+    @media only screen and (min-width: $lg) {
+        width: 71rem;
+    }
+}
+@mixin flex-row-reverse {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse;
+}
+@mixin flex-col-reverse {
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    flex-direction: column-reverse;
+}
+// Function to calculate the width of a cell
+$target: null;
+$container: null;
+@function calc-percent($target, $container) {
+    @if $target == 0 {
+        @return 0%;
+    }
+    @elseif $container == 0 {
+        @return 0%;
+    }
+    @else {
+        @return ($target / $container) * 100%;
+    }
+}
+// Sets the amount of columns and stretches them fully for a flexible and responsive view
+// Set the second value to a positive integer if you want to play around with more columns.
+@mixin col-xs($col-width, $col-max: 12) {
+    box-sizing: border-box;
+    -ms-flex-preferred-size: calc-percent($col-width, $col-max);
+    -webkit-flex-basis: calc-percent($col-width, $col-max);
+    flex-basis: calc-percent($col-width, $col-max);
+    max-width: calc-percent($col-width, $col-max);
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+// Axis Alignment
+// Uses the calc-percent function to calculate how much the column should be pushed to the right
+@mixin col-xs-offset($col-left, $col-max: 12) {
+    margin-left: calc-percent($col-left, $col-max);
+}
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content-xs($justify: flex-start) {
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    -webkit-box-pack: $justify;
+    justify-content: $justify;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items-xs($items: stretch) {
+    -webkit-align-items: $items;
+    -ms-flex-align-items: $items;
+    -webkit-box-align-items: $items;
+    align-items: $items;
+}
+// Axis Alignment
+// - applies to: flex items
+// Integers. Negative values allowed.
+@mixin order-xs($order: 1) {
+    -webkit-order: $order;
+    -ms-flex-order: $order;
+    -webkit-box-order: $order;
+    order: $order;
+}
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self-xs($self: auto) {
+    -webkit-align-self: $self;
+    -ms-flex-align-self: $self;
+    -webkit-box-align-self: $self;
+    align-self: $self;
+}
+@media only screen and (min-width: $sm) {
+    @mixin col-sm($col-width, $col-max: 12) {
+        box-sizing: border-box;
+        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
+        -webkit-flex-basis: calc-percent($col-width, $col-max);
+        flex-basis: calc-percent($col-width, $col-max);
+        max-width: calc-percent($col-width, $col-max);
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    @mixin col-sm-offset($col-left, $col-max: 12) {
+        margin-left: calc-percent($col-left, $col-max);
+    }
+    @mixin justify-content-sm($justify: flex-start) {
+        -webkit-justify-content: $justify;
+        -ms-flex-pack: $justify;
+        -webkit-box-pack: $justify;
+        justify-content: $justify;
+    }
+    @mixin align-items-sm($items: stretch) {
+        -webkit-align-items: $items;
+        -ms-flex-align-items: $items;
+        -webkit-box-align-items: $items;
+        align-items: $items;
+    }
+    @mixin order-sm($order: 1) {
+        -webkit-order: $order;
+        -ms-flex-order: $order;
+        -webkit-box-order: $order;
+        order: $order;
+    }
+    @mixin align-self-sm($self: auto) {
+        -webkit-align-self: $self;
+        -ms-flex-align-self: $self;
+        -webkit-box-align-self: $self;
+        align-self: $self;
+    }
+}
+@media only screen and (min-width: $md) {
+    @mixin col-md($col-width, $col-max: 12) {
+        box-sizing: border-box;
+        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
+        -webkit-flex-basis: calc-percent($col-width, $col-max);
+        flex-basis: calc-percent($col-width, $col-max);
+        max-width: calc-percent($col-width, $col-max);
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    @mixin col-md-offset($col-left, $col-max: 12) {
+        margin-left: calc-percent($col-left, $col-max);
+    }
+    @mixin justify-content-md($justify: flex-start) {
+        -webkit-justify-content: $justify;
+        -ms-flex-pack: $justify;
+        -webkit-box-pack: $justify;
+        justify-content: $justify;
+    }
+    @mixin align-items-md($items: stretch) {
+        -webkit-align-items: $items;
+        -ms-flex-align-items: $items;
+        -webkit-box-align-items: $items;
+        align-items: $items;
+    }
+    @mixin order-md($order: 1) {
+        -webkit-order: $order;
+        -ms-flex-order: $order;
+        -webkit-box-order: $order;
+        order: $order;
+    }
+    @mixin align-self-md($self: auto) {
+        -webkit-align-self: $self;
+        -ms-flex-align-self: $self;
+        -webkit-box-align-self: $self;
+        align-self: $self;
+    }
+}
+@media only screen and (min-width: $lg) {
+    @mixin col-lg($col-width, $col-max: 12) {
+        box-sizing: border-box;
+        -ms-flex-preferred-size: calc-percent($col-width, $col-max);
+        -webkit-flex-basis: calc-percent($col-width, $col-max);
+        flex-basis: calc-percent($col-width, $col-max);
+        max-width: calc-percent($col-width, $col-max);
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    @mixin col-lg-offset($col-left, $col-max: 12) {
+        margin-left: calc-percent($col-left, $col-max);
+    }
+    @mixin justify-content-lg($justify: flex-start) {
+        -webkit-justify-content: $justify;
+        -ms-flex-pack: $justify;
+        -webkit-box-pack: $justify;
+        justify-content: $justify;
+    }
+    @mixin align-items-lg($items: stretch) {
+        -webkit-align-items: $items;
+        -ms-flex-align-items: $items;
+        -webkit-box-align-items: $items;
+        align-items: $items;
+    }
+    @mixin order-lg($order: 1) {
+        -webkit-order: $order;
+        -ms-flex-order: $order;
+        -webkit-box-order: $order;
+        order: $order;
+    }
+    @mixin align-self-lg($self: auto) {
+        -webkit-align-self: $self;
+        -ms-flex-align-self: $self;
+        -webkit-box-align-self: $self;
+        align-self: $self;
+    }
+}
