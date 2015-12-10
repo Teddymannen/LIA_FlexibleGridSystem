@@ -1,10 +1,14 @@
 # LIA_FlexibleGridSystem
-~Flexible GS is made by Teddy Fredricson during his internship at BTH(Bleking Tekniska Högskola).~
+_Flexible GS is made by Teddy Fredricson during his internship at BTH(Bleking Tekniska Högskola)._
 
 It is made with inspiration from
+
 https://github.com/kristoferjoseph/flexboxgrid
+
 https://gist.github.com/jayj/4012969
+
 http://tylertate.github.io/semantic.gs/
+
 any many other systems found online.
 
 The system uses the power of SASS to create a Semantic Grid System with Flexbox.
