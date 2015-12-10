@@ -3,9 +3,9 @@ _Flexible GS is made by Teddy Fredricson during his internship at BTH(Bleking Te
 
 It is made with inspiration from
 
-https://github.com/kristoferjoseph/flexboxgrid
-https://gist.github.com/jayj/4012969
-http://tylertate.github.io/semantic.gs/
+[Flexbox Grid](https://github.com/kristoferjoseph/flexboxgrid)
+[CSS3 Flexbox - LESS Mixins](https://gist.github.com/jayj/4012969)
+[Tyler Tate's Semantic GS](http://tylertate.github.io/semantic.gs/)
 
 any many other systems found online.
 
