@@ -12,7 +12,7 @@ any many other systems found online.
 The system uses the power of SASS to create a Semantic Grid System with Flexbox.
 
 
-Tutorial to the Grid System:
+### Tutorial to the Grid System:
 (first of all, you might want to check out https://css-tricks.com/snippets/css/a-guide-to-flexbox/, a really good website that explains the basic usage of Flexbox)
 
 1. The first thing you might want to do is download Ruby(unless you're on a mac, then it should be installed already) from http://rubyinstaller.org/downloads/.
