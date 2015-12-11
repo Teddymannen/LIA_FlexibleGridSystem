@@ -5,22 +5,48 @@ div.wrap {
 }
 header {
     @include col(12);
+    @media only screen and (min-width: $md) {
+        @include order(1);
+    }
 }
 aside.firstAside {
-    @include col(6);
+    @include col(12);
     @media only screen and (min-width: $sm) {
-        @include col(12);
+        @include col(6);
+    }
+    @media only screen and (min-width: $md) {
+        @include col(3);
+        @include order(2);
+        @include flex-col;  // Making the aside display as flex to be able
+                            // to center its content, and not only the text
+                            // like with 'text-align'.
+        @include justify-content(center);
     }
 }
 aside.secondAside {
-    @include col(6);
+    @include col(12);
     @media only screen and (min-width: $sm) {
-        @include col(12);
+        @include col(6);
+    }
+    @media only screen and (min-width: $md) {
+        @include col(3);
+        @include order(4);
+        @include flex-col;  // Making the aside display as flex to be able
+                            // to center its content, and not only the text
+                            // like with 'text-align'.
+        @include justify-content(center);
     }
 }
 section.main {
     @include col(12);
+    @media only screen and (min-width: $md) {
+        @include col(6);
+        @include order(3);
+    }
 }
 footer {
     @include col(12);
+    @media only screen and (min-width: $md) {
+        @include order(5);
+    }
 }
